@@ -1,0 +1,17 @@
+node_modules/
+yarn.lock
+coverage/
+template/
+build/
+dist/
+bin/
+obj/
+junit.xml
+.dccache
+.vscode/
+/*/*/common/
+.idea/
+*.user
+*~
+megalinter-reports/
+App_Data/
