@@ -18,6 +18,8 @@ The workflow dispatcher should dispatch the latest version of the workflow.
 
 ## Note
 
+This issue is present in version `3.3.0 - rc2`.
+
 If you use version `3.2.3`, and use the following code, it will work as expected:
 
 ```csharp
