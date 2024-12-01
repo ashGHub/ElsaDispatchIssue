@@ -14,3 +14,20 @@ The workflow dispatcher is only dispatching `Version 1` of the workflow, even th
 ## Expected Behavior
 
 The workflow dispatcher should dispatch the latest version of the workflow.
+
+
+## Note
+
+If you use version `3.2.3`, and use the following code, it will work as expected:
+
+```csharp
+var dispatchRequest = new DispatchWorkflowDefinitionRequest
+{
+    DefinitionId = $"{evt.GetType().Name}Workflow",
+    CorrelationId = evt.EventKey,
+    Input = new Dictionary<string, object> { { WorkflowInputKeys.InputEvent, evt } },
+    VersionOptions = VersionOptions.LatestAndPublished,
+};
+// Fire and Forget
+await workflowDispatcher.DispatchAsync(dispatchRequest, cancellationToken);
+```
